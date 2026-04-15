@@ -1,41 +1,46 @@
-<head></head>
-<span id="one">one</span><!--
---><span id="two">two</span><!--
---><span id="three">three</span>
-<br>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Liên Hệ Đặng Đình Nguyên</title>
+    </head>
+    <body bgcolor="#f0f0f0">
+        <br><br>
+        <table border="1" width="400" align="center" bgcolor="white" cellpadding="10" cellspacing="0">
+            <tr>
+                <td colspan="2" align="center" bgcolor="lightblue" height="50">
+                    <h2>LIÊN HỆ</h2>
+                </td>
+            </tr>
 
-<div class="container">
-    One Two Three
-</div>
+            <tr>
+                <td width="40%" align="right"><b>Email:</b></td>
+                <td>
+                    <input type="email" name="email" placeholder="Nhập email" size="25">
+                </td>
+            </tr>
 
-<style>
-    #one{background-color: blue;
-        padding: 5px;
-        border: solid;
-        border-width: 2px;
-        border-color: red;
-        width: 50px;
-        font-style: italic;
-        font-weight: 400;
-    }
-    #two{background-color: aqua;
-        margin: 4px;
-    }
-    #three{background-color: blueviolet;
-    }
-    
-</style>
-<style>
-    .container{
-        display: flexbox;
-        background-color: pink;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        height: 50px;
-    }
-    .container > div {
-        background-color: yellow;
-        margin: 5px;
-    }
-</style>
+            <tr>
+                <td align="right"><b>Số điện thoại:</b></td>
+                <td>
+                    <input type="tel" name="sdt" placeholder="Nhập số điện thoại" size="25">
+                </td>
+            </tr>
+
+            <tr>
+                <td align="right"><b>Lời nhắn:</b></td>
+                <td>
+                    <textarea name="loinhan" placeholder="Nhập lời nhắn của bạn tại đây..." rows="5" cols="30"></textarea>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="button" value="Gửi Liên Hệ" onclick="window.location.href='thank.html'" style="background-color: lightblue; font-weight: bold; padding: 5px 20px;">
+                    &nbsp;&nbsp;
+                    <input type="reset" value="Xóa" style="padding: 5px 20px;">
+                </td>
+            </tr>
+
+        </table>
+
+    </body>
