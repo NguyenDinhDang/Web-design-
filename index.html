@@ -3,14 +3,14 @@
     <head>
         <title>Đăng Nhập</title>
         <style>
-            .social-group { margin-bottom: 8px; }
-            .group-title { font-size: 12px; font-weight: bold; color: #555; margin-bottom: 5px; }
-            .social-grid {
+            /* Class thay thế cho div cũ */
+            .social-container {
                 display: grid;
                 grid-template-columns: repeat(4, 1fr);
                 gap: 5px;
+                padding: 10px;
             }
-            .social-grid a {
+            .social-container a {
                 display: flex;
                 align-items: center;
                 gap: 5px;
@@ -19,169 +19,135 @@
                 border-radius: 4px;
                 text-decoration: none;
                 color: #333;
-                font-size: 12px;
+                font-size: 11px;
                 background: #fafafa;
                 white-space: nowrap;
                 overflow: hidden;
             }
-            .social-grid a:hover { background: #f0f0f0; }
-            .social-grid a img { width: 18px; height: 18px; flex-shrink: 0; }
+            .social-container a:hover { background: #f0f0f0; border-color: pink; }
+            .social-container a img { width: 18px; height: 18px; flex-shrink: 0; }
+            
+            /* Tiêu đề nhóm nhỏ */
+            .group-label {
+                font-size: 10px;
+                color: #888;
+                padding: 5px 10px 0 10px;
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+            /* Đường kẻ phân cách hàng */
+            .row-sep { border-top: 1px solid #eee; }
         </style>
     </head>
     <body bgcolor="#f0f0f0">
 
         <br><br>
 
-        <table border="1" width="500" align="center" bgcolor="white" cellpadding="10" cellspacing="0">
+        <table border="1" width="600" align="center" bgcolor="white" cellpadding="0" cellspacing="0" style="border-collapse: collapse; border: 1px solid #ccc;">
 
             <tr>
                 <td colspan="2" align="center" bgcolor="pink" height="50">
-                    <h2>ĐĂNG NHẬP</h2>
+                    <h2 style="margin: 0;">ĐĂNG NHẬP</h2>
                 </td>
             </tr>
 
             <tr>
-                <td width="35%" align="right"><b>Email:</b></td>
-                <td>
-                    <input type="email" name="email" placeholder="Nhập email" size="25">
-                </td>
+                <td width="30%" align="right" style="padding: 10px;"><b>Email:</b></td>
+                <td style="padding: 10px;"><input type="email" placeholder="Nhập email" style="width: 90%;"></td>
             </tr>
-
             <tr>
-                <td align="right"><b>Mật khẩu:</b></td>
-                <td>
-                    <input type="password" name="matkhau" placeholder="Nhập mật khẩu" size="25">
-                </td>
+                <td align="right" style="padding: 10px;"><b>Mật khẩu:</b></td>
+                <td style="padding: 10px;"><input type="password" placeholder="Nhập mật khẩu" style="width: 90%;"></td>
             </tr>
-
             <tr>
-                <td colspan="2" align="center">
-                    <input type="checkbox" name="ghonho"> Ghi nhớ đăng nhập
-                </td>
-            </tr>
-
-            <tr>
-                <td colspan="2" align="center">
-                    <input type="button" value="Đăng Nhập" onclick="window.location.href='main.html'" style="background-color: pink; font-weight: bold; padding: 5px 20px; cursor: pointer;">
-                    &nbsp;&nbsp;
+                <td colspan="2" align="center" style="padding: 10px;">
+                    <input type="button" value="Đăng Nhập" style="background-color: pink; font-weight: bold; padding: 5px 20px; cursor: pointer;">
+                    &nbsp;
                     <input type="reset" value="Xóa" style="padding: 5px 20px;">
                 </td>
             </tr>
 
             <tr>
-                <td colspan="2" align="center" bgcolor="#f9f9f9">
-                    Chưa có tài khoản?
-                    <a href="register.html">Đăng ký ngay</a>
-                </td>
-            </tr>
-
-            <tr>
-                <td colspan="2" align="center" bgcolor="#eeeeee">
+                <td colspan="2" align="center" bgcolor="#eeeeee" style="padding: 8px;">
                     <b>Hoặc đăng nhập bằng</b>
                 </td>
             </tr>
 
             <tr>
-                <td colspan="2" bgcolor="#f9f9f9">
+                <td colspan="2">
+                    <nav class="social-container">
+                        <a href="#"><img src="https://img.icons8.com/color/24/google-logo.png">Google</a>
+                        <a href="#"><img src="https://img.icons8.com/color/24/facebook.png">Facebook</a>
+                        <a href="#"><img src="https://img.icons8.com/color/24/instagram-new.png">Instagram</a>
+                        <a href="#"><img src="https://img.icons8.com/color/24/youtube-play.png">YouTube</a>
+                        <a href="#"><img src="https://img.icons8.com/color/24/tiktok.png">TikTok</a>
+                        <a href="#"><img src="https://img.icons8.com/color/24/douyin.png">Douyin</a>
+                        <a href="#"><img src="https://img.icons8.com/color/24/zalo.png">Zalo</a>
+                        <a href="#"><img src="https://img.icons8.com/color/24/twitterx.png">X</a>
+                        <a href="#"><img src="https://img.icons8.com/color/24/threads.png">Threads</a>
+                        <a href="#"><img src="https://img.icons8.com/color/24/reddit.png">Reddit</a>
+                        <a href="#"><img src="https://img.icons8.com/color/24/pinterest.png">Pinterest</a>
+                    </nav>
+                </td>
+            </tr>
 
-                    <div class="social-group">
-                        <div class="social-grid">
-                            <a href="main.html"><img src="https://img.icons8.com/color/24/google-logo.png">Google</a>
-                            <a href="main.html"><img src="https://img.icons8.com/color/24/facebook.png">Facebook</a>
-                            <a href="main.html"><img src="https://img.icons8.com/color/24/instagram-new.png">Instagram</a>
-                            <a href="main.html"><img src="https://img.icons8.com/color/24/youtube-play.png">YouTube</a>
-                            <a href="main.html"><img src="https://img.icons8.com/color/24/tiktok.png">TikTok</a>
-                            <a href="main.html"><img src="https://img.icons8.com/color/24/douyin.png">Douyin</a>
-                            <a href="main.html"><img src="https://img.icons8.com/color/24/zalo.png">Zalo</a>
-                            <a href="main.html"><img src="https://img.icons8.com/color/24/twitterx.png">X</a>
-                            <a href="main.html"><img src="https://img.icons8.com/color/24/threads.png">Threads</a>
-                            <a href="main.html"><img src="https://img.icons8.com/color/24/reddit.png">Reddit</a>
-                            <a href="main.html"><img src="https://img.icons8.com/color/24/pinterest.png">Pinterest</a>
-                        </div>
-                    </div>
+            <tr class="row-sep">
+                <td colspan="2">
+                    <nav class="social-container">
+                        <a href="#"><img src="https://img.icons8.com/color/24/facebook-messenger.png">Messenger</a>
+                        <a href="#"><img src="https://img.icons8.com/color/24/whatsapp.png">WhatsApp</a>
+                        <a href="#"><img src="https://img.icons8.com/color/24/telegram-app.png">Telegram</a>
+                        <a href="#"><img src="https://img.icons8.com/color/24/discord.png">Discord</a>
+                    </nav>
+                </td>
+            </tr>
 
-                    <div class="social-group">
-                        <div class="social-grid">
-                            <a href="main.html"><img src="https://img.icons8.com/color/24/facebook-messenger.png">Messenger</a>
-                            <a href="main.html"><img src="https://img.icons8.com/color/24/whatsapp.png">WhatsApp</a>
-                            <a href="main.html"><img src="https://img.icons8.com/color/24/telegram-app.png">Telegram</a>
-                            <a href="main.html"><img src="https://img.icons8.com/color/24/discord.png">Discord</a>
-                        </div>
-                    </div>
+            <tr class="row-sep">
+                <td colspan="2">
+                    <nav class="social-container">
+                        <a href="#"><img src="https://img.icons8.com/color/24/linkedin.png">LinkedIn</a>
+                        <a href="#"><img src="https://img.icons8.com/color/24/notion.png">Notion</a>
+                        <a href="#"><img src="https://img.icons8.com/color/24/github.png">GitHub</a>
+                        <a href="#"><img src="https://img.icons8.com/color/24/gitlab.png">GitLab</a>
+                        <a href="#"><img src="https://img.icons8.com/color/24/stackoverflow.png">StackOverflow</a>
+                        <a href="#"><img src="https://img.icons8.com/color/24/docker.png">Docker Hub</a>
+                    </nav>
+                </td>
+            </tr>
 
-                    <div class="social-group">
-                        <div class="social-grid">
-                            <a href="main.html"><img src="https://img.icons8.com/color/24/linkedin.png">LinkedIn</a>
-                            <a href="main.html"><img src="https://img.icons8.com/color/24/notion.png">Notion</a>
-                        </div>
-                    </div>
+            <tr class="row-sep">
+                <td colspan="2">
+                    <nav class="social-container">
+                        <a href="#"><img src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/external-leetcode-is-a-platform-to-help-you-enhance-your-skills-logo-color-tal-revivo.png">LeetCode</a>
+                        <a href="#"><img src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/external-hackerrank-is-a-technology-hiring-platform-that-is-the-standard-for-assessing-developer-skills-logo-color-tal-revivo.png">HackerRank</a>
+                        <a href="#"><img src="https://img.icons8.com/color/24/codecademy.png">CodeForces</a>
+                        <a href="#"><img src="https://img.icons8.com/color/24/free-code-camp.png">FreeCodeCamp</a>
+                    </nav>
+                </td>
+            </tr>
 
-                    <div class="social-group">
-                        <div class="social-grid">
-                            <a href="main.html"><img src="https://img.icons8.com/color/24/github.png">GitHub</a>
-                            <a href="main.html"><img src="https://img.icons8.com/color/24/gitlab.png">GitLab</a>
-                            <a href="main.html"><img src="https://img.icons8.com/color/24/stackoverflow.png">Stack Overflow</a>
-                            <a href="main.html"><img src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/external-stack-exchange-a-network-of-question-and-answer-websites-logo-color-tal-revivo.png">Stack Exchange</a>
-                            <a href="main.html"><img src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/external-bitbucket-is-a-web-based-version-control-repository-hosting-service-logo-color-tal-revivo.png">Bitbucket</a>
-                            <a href="main.html"><img src="https://img.icons8.com/color/24/docker.png">Docker Hub</a>
-                            <a href="main.html"><img src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/external-postman-is-the-only-complete-api-development-environment-logo-color-tal-revivo.png">Postman</a>
-                        </div>
-                    </div>
+            <tr class="row-sep">
+                <td colspan="2">
+                    <nav class="social-container">
+                        <a href="#"><img src="https://img.icons8.com/color/24/google-drive.png">Drive</a>
+                        <a href="#"><img src="https://img.icons8.com/color/24/icloud.png">iCloud</a>
+                        <a href="#"><img src="https://img.icons8.com/color/24/onedrive.png">OneDrive</a>
+                        <a href="#"><img src="https://img.icons8.com/color/24/cloudflare.png">Cloudflare</a>
+                    </nav>
+                </td>
+            </tr>
 
-                    <div class="social-group">
-                        <div class="social-grid">
-                            <a href="main.html"><img src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/external-leetcode-is-a-platform-to-help-you-enhance-your-skills-logo-color-tal-revivo.png">LeetCode</a>
-                            <a href="main.html"><img src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/external-hackerrank-is-a-technology-hiring-platform-that-is-the-standard-for-assessing-developer-skills-logo-color-tal-revivo.png">HackerRank</a>
-                            <a href="main.html"><img src="https://img.icons8.com/color/24/codecademy.png">CodeForces</a>
-                            <a href="main.html"><img src="https://img.icons8.com/color/24/free-code-camp.png">FreeCodeCamp</a>
-                            <a href="main.html"><img src="https://img.icons8.com/color/24/classroom.png">LMS</a>
-                        </div>
-                    </div>
-
-                    <div class="social-group">
-                        <div class="social-grid">
-                            <a href="main.html"><img src="https://img.icons8.com/color/24/vercel.png">Vercel</a>
-                            <a href="main.html"><img src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/external-netlify-a-cloud-computing-company-that-offers-hosting-and-serverless-backend-services-logo-color-tal-revivo.png">Netlify</a>
-                            <a href="main.html"><img src="https://img.icons8.com/color/24/cloud.png">Render</a>
-                            <a href="main.html"><img src="https://img.icons8.com/color/24/supabase.png">Supabase</a>
-                            <a href="main.html"><img src="https://img.icons8.com/color/24/cloudflare.png">Cloudflare</a>
-                        </div>
-                    </div>
-
-                    <div class="social-group">
-                        <div class="social-grid">
-                            <a href="main.html"><img src="https://img.icons8.com/color/24/google-drive.png">Google Drive</a>
-                            <a href="main.html"><img src="https://img.icons8.com/color/24/icloud.png">iCloud</a>
-                            <a href="main.html"><img src="https://img.icons8.com/color/24/onedrive.png">OneDrive</a>
-                        </div>
-                    </div>
-
-                    <div class="social-group">
-                        <div class="social-grid">
-                            <a href="main.html"><img src="https://img.icons8.com/color/24/shopee.png">Shopee</a>
-                            <a href="main.html"><img src="https://img.icons8.com/color/24/lazada.png">Lazada</a>
-                            <a href="main.html"><img src="https://img.icons8.com/color/24/tiktok.png">TikTok Shop</a>
-                            <a href="main.html"><img src="https://img.icons8.com/color/24/amazon.png">Amazon</a>
-                            <a href="main.html"><img src="https://img.icons8.com/color/24/tiki.png">Tiki</a>
-                        </div>
-                    </div>
-
-                    <div class="social-group">
-                        <div class="social-grid">
-                            <a href="main.html"><img src="https://img.icons8.com/color/24/netflix.png">Netflix</a>
-                            <a href="main.html"><img src="https://img.icons8.com/color/24/spotify.png">Spotify</a>
-                            <a href="main.html"><img src="https://img.icons8.com/color/24/twitch.png">Twitch</a>
-                            <a href="main.html"><img src="https://img.icons8.com/color/24/apple-music.png">Apple Music</a>
-                        </div>
-                    </div>
-
-                    <div class="social-group">
-                        <div class="social-grid">
-                            <a href="main.html"><img src="https://img.icons8.com/color/24/momo.png">MoMo</a>
-                            <a href="main.html"><img src="https://img.icons8.com/color/24/zalo.png">ZaloPay</a>
-                        </div>
-                    </div>
-
+            <tr class="row-sep">
+                <td colspan="2">
+                    <nav class="social-container">
+                        <a href="#"><img src="https://img.icons8.com/color/24/shopee.png">Shopee</a>
+                        <a href="#"><img src="https://img.icons8.com/color/24/lazada.png">Lazada</a>
+                        <a href="#"><img src="https://img.icons8.com/color/24/tiki.png">Tiki</a>
+                        <a href="#"><img src="https://img.icons8.com/color/24/netflix.png">Netflix</a>
+                        <a href="#"><img src="https://img.icons8.com/color/24/spotify.png">Spotify</a>
+                        <a href="#"><img src="https://img.icons8.com/color/24/momo.png">MoMo</a>
+                        <a href="#"><img src="https://img.icons8.com/color/24/zalo.png">ZaloPay</a>
+                    </nav>
                 </td>
             </tr>
 
