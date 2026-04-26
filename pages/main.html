@@ -4,25 +4,24 @@
     <meta charset="UTF-8">
     <title>Trang chủ Đặng Đình Nguyên</title>
     <style>
-        /* 1. Kỹ thuật ép Full màn hình, không cho cuộn trang */
+        /* Ép Full màn hình, không cho cuộn trang */
         html, body {
             margin: 0; padding: 0;
             height: 100vh; width: 100vw;
             overflow: hidden; 
-            font-family: "Times New Roman", Times, serif; /* Trả lại font chữ cơ bản */
+            font-family: "Times New Roman", Times, serif;
         }
 
-        /* 2. Giữ nguyên cấu trúc Bảng của bạn */
         .main-table {
             width: 100%; height: 100vh;
             border-collapse: collapse;
-            table-layout: fixed; /* Ép kích thước không bị vỡ */
+            table-layout: fixed; 
         }
 
-        /* 3. Header: Giữ nền màu kem nhạt và Nút Đăng Xuất bên trái */
+        /* Header */
         .header-cell {
             height: 15vh;
-            background-color: #faebd7; /* Màu nền kem nhạt giống ảnh của bạn */
+            background-color: #faebd7; 
             position: relative;
             border-bottom: 1px solid #ccc;
         }
@@ -35,7 +34,7 @@
             background-color: white;
         }
 
-        /* 4. Thanh Menu: Trả lại màu Hồng đặc trưng */
+        /* Thanh Menu Pink */
         .nav-bar {
             height: 5vh;
             background-color: pink;
@@ -48,17 +47,16 @@
             text-decoration: none; margin: 0 20px;
         }
 
-        /* 5. Sidebar: Trả lại màu Vàng nguyên bản và Link màu xanh */
+        /* Sidebar Vàng: Đã được thu nhỏ lại 15% */
         .sidebar {
-            width: 25%; /* Giữ sidebar hẹp để nhường chỗ cho Iframe */
+            width: 15%; 
             background-color: yellow; 
             vertical-align: top;
             border-right: 1px solid #ccc;
         }
 
-        /* Thêm thẻ div này để chỉ cuộn danh sách nhạc/phim nếu nó quá dài */
         .sidebar-scroll {
-            height: 80vh; 
+            height: 75vh; /* Chiều cao trừ đi Header, Menu và Footer */
             overflow-y: auto; 
             padding: 10px;
         }
@@ -70,25 +68,34 @@
 
         .sidebar-scroll a {
             display: block;
-            color: blue; /* Link màu xanh dương gạch chân như bạn muốn */
+            color: blue;
             text-decoration: underline;
             margin-bottom: 8px;
         }
         
-        /* Đổi màu đỏ khi đưa chuột vào link cho dễ nhìn */
         .sidebar-scroll a:hover {
             color: red; 
         }
 
-        /* 6. Nội dung chính: Trả lại màu Aqua */
+        /* Nội dung Iframe: Đã được phóng to 85% */
         .content-cell {
-            width: 75%;
+            width: 85%;
             background-color: aqua;
             vertical-align: top;
         }
 
         iframe {
             width: 100%; height: 100%; border: none;
+        }
+
+        /* Footer mới */
+        .footer-cell {
+            height: 5vh;
+            background-color: #eeeeee;
+            text-align: center;
+            font-size: 14px;
+            font-weight: bold;
+            border-top: 1px solid #ccc;
         }
     </style>
 </head>
@@ -103,9 +110,9 @@
 
         <tr>
             <td colspan="2" class="nav-bar">
-                <a href="#">Trang Chủ</a>
-                <a href="#">Giới Thiệu</a>
-                <a href="portfolio.html" target="main">Dự Án Của Tôi</a>
+                <a href="https://www.canva.com/design/DAHGLuvhyy0/tuayaHWW-fKaJzEw9MgQ3A/view?embed" target="main">Trang Chủ</a>
+                <a href="portfolio.html" target="main">Giới Thiệu</a>
+                <a href="myproject.html" target="main">Dự Án Của Tôi</a>
                 <a href="style.html" target="main">Liên Hệ</a>
             </td>
         </tr>
@@ -133,7 +140,13 @@
             </td>
 
             <td class="content-cell">
-                <iframe name="main" src="portfolio.html"></iframe>
+                <iframe name="main" src="https://www.canva.com/design/DAHGLuvhyy0/tuayaHWW-fKaJzEw9MgQ3A/view?embed"></iframe>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2" class="footer-cell">
+                Bản quyền thuộc về Đặng Đình Nguyên © 2026 | Lớp: DA25TTD
             </td>
         </tr>
     </table>
