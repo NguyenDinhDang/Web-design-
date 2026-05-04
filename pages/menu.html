@@ -25,43 +25,42 @@
             object-fit: cover;
         }
 
-        .page-title {
+        .page-box,
+        .sidebar-box,
+        .content-box {
             background: #ffffff;
             border: 1px solid #dee2e6;
             border-radius: 10px;
+        }
+
+        .page-box {
             padding: 24px;
         }
 
-        .simple-card,
-        .practice-list {
-            border: 1px solid #dee2e6;
-            border-radius: 10px;
-            box-shadow: none;
-        }
-
-        .simple-card {
-            height: 100%;
-        }
-
-        .icon-box {
-            width: 40px;
-            height: 40px;
-            border-radius: 8px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: #eef2ff;
-            color: #1d4ed8;
-            font-size: 20px;
-        }
-
-        .practice-list {
+        .sidebar-box {
             overflow: hidden;
         }
 
+        .sidebar-title {
+            padding: 16px;
+            border-bottom: 1px solid #dee2e6;
+            background: #f8f9fa;
+        }
+
+        .practice-link {
+            border: 0;
+            border-bottom: 1px solid #eef1f4;
+            border-radius: 0 !important;
+            padding: 14px 16px;
+        }
+
+        .practice-link:last-child {
+            border-bottom: 0;
+        }
+
         .week-badge {
-            width: 40px;
-            height: 40px;
+            width: 36px;
+            height: 36px;
             border-radius: 8px;
             display: inline-flex;
             align-items: center;
@@ -73,17 +72,21 @@
             flex: 0 0 auto;
         }
 
-        .quick-link {
+        .content-box {
+            padding: 22px;
+            min-height: 100%;
+        }
+
+        .link-row {
             border: 1px solid #dee2e6;
-            background: #ffffff;
             border-radius: 8px;
             padding: 12px 14px;
             text-decoration: none;
             color: #1f2937;
-            font-weight: 600;
+            background: #ffffff;
         }
 
-        .quick-link:hover {
+        .link-row:hover {
             background: #f8f9fa;
             color: #0d6efd;
         }
@@ -104,7 +107,7 @@
                     <li class="nav-item"><a class="nav-link active" href="menu.html">Menu</a></li>
                     <li class="nav-item"><a class="nav-link" href="main.html">Trang chính</a></li>
                     <li class="nav-item"><a class="nav-link" href="myproject.html">Hồ sơ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#practice-list">Thực hành</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#practice-sidebar">Thực hành</a></li>
                 </ul>
                 <a href="../index.html" class="btn btn-sm btn-outline-danger ms-lg-3">Đăng xuất</a>
             </div>
@@ -112,13 +115,13 @@
     </nav>
 
     <main class="container py-4">
-        <section class="page-title mb-4">
+        <section class="page-box mb-4">
             <div class="row align-items-center g-3">
                 <div class="col-lg-8">
                     <span class="badge text-bg-light border mb-2">Bài tập cá nhân</span>
-                    <h1 class="h3 fw-bold mb-2">Menu</h1>
+                    <h1 class="h3 fw-bold mb-2">Menu điều hướng</h1>
                     <p class="text-secondary mb-0">
-                        Trang này dùng để truy cập trang chính, hồ sơ và danh sách các buổi thực hành theo từng tuần.
+                        Chọn buổi thực hành ở sidebar bên trái để mở bài làm theo từng tuần.
                     </p>
                 </div>
                 <div class="col-lg-4">
@@ -131,91 +134,71 @@
             </div>
         </section>
 
-        <section class="row g-3 mb-4">
-            <div class="col-md-4">
-                <div class="card simple-card">
-                    <div class="card-body">
-                        <div class="icon-box mb-3"><i class="bi bi-house-door"></i></div>
-                        <h2 class="h5">Trang chính</h2>
-                        <p class="text-secondary small">Mở trang chính có thanh điều hướng và iframe nội dung.</p>
-                        <a href="main.html" class="btn btn-sm btn-primary">Mở trang</a>
+        <div class="row g-4">
+            <aside class="col-lg-4 col-xl-3" id="practice-sidebar">
+                <div class="sidebar-box">
+                    <div class="sidebar-title">
+                        <h2 class="h5 fw-bold mb-1">Buổi thực hành</h2>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card simple-card">
-                    <div class="card-body">
-                        <div class="icon-box mb-3"><i class="bi bi-person"></i></div>
-                        <h2 class="h5">Hồ sơ</h2>
-                        <p class="text-secondary small">Xem thông tin cá nhân và các nội dung giới thiệu.</p>
-                        <a href="myproject.html" class="btn btn-sm btn-primary">Mở hồ sơ</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card simple-card">
-                    <div class="card-body">
-                        <div class="icon-box mb-3"><i class="bi bi-envelope"></i></div>
-                        <h2 class="h5">Liên hệ</h2>
-                        <p class="text-secondary small">Mở trang liên hệ của website.</p>
-                        <a href="style.html" class="btn btn-sm btn-primary">Mở liên hệ</a>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <section id="practice-list" class="mb-4">
-            <div class="d-flex flex-wrap align-items-end justify-content-between gap-2 mb-3">
-                <div>
-                    <h2 class="h4 fw-bold mb-1">Danh sách buổi thực hành</h2>
-                    <p class="text-secondary mb-0">Mỗi tuần thêm một dòng mới vào danh sách bên dưới.</p>
-                </div>
-                <a href="../110125113/index.html" class="btn btn-outline-primary">
-                    <i class="bi bi-box-arrow-up-right me-1"></i>
-                    Mở buổi mới nhất
-                </a>
-            </div>
-
-            <div class="list-group practice-list">
-                <a href="../110125113/index.html" class="list-group-item list-group-item-action">
-                    <div class="d-flex align-items-center gap-3">
-                        <span class="week-badge">01</span>
-                        <div class="flex-grow-1">
-                            <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
-                                <h3 class="h6 fw-bold mb-0">Buổi thực hành 1</h3>
-                                <span class="badge text-bg-success">Đã hoàn thành</span>
+                    <div class="list-group list-group-flush">
+                        <a href="../110125113/index.html" class="list-group-item list-group-item-action practice-link active">
+                            <div class="d-flex align-items-center gap-3">
+                                <span class="week-badge bg-white text-primary">01</span>
+                                <div>
+                                    <div class="fw-semibold">Buổi thực hành 1</div>
+                                    <div class="small opacity-75">Home, About, Gallery, Contact</div>
+                                </div>
                             </div>
-                            <p class="text-secondary small mb-0">Trang Home, About, Gallery và Contact.</p>
-                        </div>
-                        <i class="bi bi-chevron-right text-secondary"></i>
-                    </div>
-                </a>
+                        </a>
 
-                <!-- Mẫu thêm buổi mới:
-                <a href="../ten-thu-muc-buoi-2/index.html" class="list-group-item list-group-item-action">
-                    <div class="d-flex align-items-center gap-3">
-                        <span class="week-badge">02</span>
-                        <div class="flex-grow-1">
-                            <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
-                                <h3 class="h6 fw-bold mb-0">Buổi thực hành 2</h3>
-                                <span class="badge text-bg-secondary">Mới thêm</span>
+                        <!-- Mẫu thêm buổi mới:
+                        <a href="../ten-thu-muc-buoi-2/index.html" class="list-group-item list-group-item-action practice-link">
+                            <div class="d-flex align-items-center gap-3">
+                                <span class="week-badge">02</span>
+                                <div>
+                                    <div class="fw-semibold">Buổi thực hành 2</div>
+                                    <div class="small text-secondary">Mô tả ngắn nội dung</div>
+                                </div>
                             </div>
-                            <p class="text-secondary small mb-0">Mô tả ngắn nội dung buổi thực hành.</p>
-                        </div>
-                        <i class="bi bi-chevron-right text-secondary"></i>
+                        </a>
+                        -->
                     </div>
-                </a>
-                -->
-            </div>
-        </section>
+                </div>
+            </aside>
 
-        <section class="mb-4">
-            <div class="d-grid d-md-flex gap-2">
-                <a class="quick-link flex-fill" href="portfolio.html">Giới thiệu</a>
-                <a class="quick-link flex-fill" href="main.html">Dashboard</a>
-                <a class="quick-link flex-fill" href="../index.html">Quay về đăng nhập</a>
-            </div>
-        </section>
+            <section class="col-lg-8 col-xl-9">
+                <div class="content-box">
+                    <h2 class="h4 fw-bold mb-3">Thông tin menu</h2>
+                    <div class="row g-3 mt-2">
+                        <div class="col-md-6">
+                            <a class="link-row d-flex align-items-center justify-content-between" href="main.html">
+                                <span><i class="bi bi-house-door me-2"></i>Trang chính</span>
+                                <i class="bi bi-chevron-right"></i>
+                            </a>
+                        </div>
+                        <div class="col-md-6">
+                            <a class="link-row d-flex align-items-center justify-content-between" href="myproject.html">
+                                <span><i class="bi bi-person me-2"></i>Hồ sơ</span>
+                                <i class="bi bi-chevron-right"></i>
+                            </a>
+                        </div>
+                        <div class="col-md-6">
+                            <a class="link-row d-flex align-items-center justify-content-between" href="style.html">
+                                <span><i class="bi bi-envelope me-2"></i>Liên hệ</span>
+                                <i class="bi bi-chevron-right"></i>
+                            </a>
+                        </div>
+                        <div class="col-md-6">
+                            <a class="link-row d-flex align-items-center justify-content-between" href="../index.html">
+                                <span><i class="bi bi-box-arrow-left me-2"></i>Quay về đăng nhập</span>
+                                <i class="bi bi-chevron-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
